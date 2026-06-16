@@ -1,0 +1,204 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+/* Cor das estrelas: #EAF6FF */
+
+body {
+	background: linear-gradient(180deg, #012754 0%, #0689f3 100%);
+	min-height: 100vh;
+}
+
+/* Cabeçalho */
+
+header {
+	padding: 20px;
+	width: 100%;
+	background: rgba(1, 39, 84, 0.8);
+	backdrop-filter: blur(10px);
+	box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+	position: relative;
+	z-index: 10;
+}
+
+/* Fundo de estrelas */
+
+.container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	z-index: 0;
+}
+
+.icone {
+	width: 80px;
+	height: 80px;
+	background-image: url('stars.png');
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	animation: anima linear infinite;
+	animation-duration: calc(300s / var(--i));
+	opacity: 0.8;
+}
+
+@keyframes anima {
+	0% {
+		transform: translateY(100vh) scale(0) rotate(0deg);
+	}
+
+	100% {
+		transform: translateY(-10vh) scale(1) rotate(360deg);
+	}
+}
+
+/* Área das fotos */
+
+.fotos {
+	position: relative;
+	z-index: 2;
+	margin: 60px auto;
+	width: 400px;
+	height: 300px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-radius: 20px;
+	box-shadow:
+		0 20px 40px rgba(0,0,0,0.3),
+		0 0 25px rgba(255,255,255,0.15);
+	animation: animate 20s infinite;
+	transition: 0.5s;
+	backdrop-filter: blur(5px);
+}
+
+.fotos:hover {
+	transform: scale(1.03);
+	box-shadow:	0 25px 50px rgba(0,0,0,0.4),	0 0 35px rgba(255,255,255,0.3);
+}
+
+@keyframes animate {
+	0%,20% {
+		background-image: url('anonovo2026.jpg');
+	}
+
+	25%,45% {
+		background-image: url('bike.jpg');
+	}
+
+	50%,70% {
+		background-image: url('teamo.jpg');
+	}
+
+	75%,95% {
+		background-image: url('careta.jpg');
+	}
+
+	100%,0% {
+		background-image: url('juntos.jpg');
+	}
+}
+
+h1, h2 {
+	color: white;
+	
+}
+
+p {
+	position: relative;
+	text-align: center;
+	margin: 35px;
+	padding: 10px;
+	border-radius: 15px;
+	font-family: "Cormorant Garamond", serif;
+	z-index: 10;
+	background-color: rgba(0, 0, 0, 0.3);
+	box-shadow: 0 0 10px 20px rgba(0, 0, 0, 0.3);
+	transition: 0.5s;
+}
+
+p:hover {
+	transform: scale(1.02);
+	color: rgba(255, 255, 255, 0.7);
+	box-shadow: 0 0 20px 30px rgba(21, 21, 21, 0.3), 0 0 10px 10px rgba(255, 255, 255, 0.4);
+}
+
+h6 {
+	position: relative;
+	text-align: left;
+	margin: 20px;
+	padding: 10px;
+	border-radius: 15px;
+	font-family: "Cormorant Garamond", serif;
+	z-index: 10;
+	font-size: 25px;
+	color: rgba(1, 39, 84, 1);
+	background-color: rgba(255, 255, 255, 0.9);
+	box-shadow: 0 10x 20px 20px rgba(0, 0, 0, 0.3);
+	transition: 0.7s;
+}
+
+h6:hover {
+	color: rgba(255, 255, 255, 0.5);
+	background-color: rgba(0, 0, 0, 0.5);
+	box-shadow: 0 0 10px 10px rgba(1, 169, 198, 0.3);
+}
+
+.link {
+	margin: 10px;
+	padding: 10px;
+	text-decoration: none;
+	font-size: 20px;
+	color: white;
+	transition: 0.5s;
+}
+
+.link:hover {
+	background-color: rgba(255, 255, 255, 0.7);
+	border-radius: 15px;
+}
+
+/* Rodapé */
+
+footer {
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 15px;
+	background: rgba(1, 39, 84, 0.8);
+	backdrop-filter: blur(10px);
+	color: white;
+	box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
+	z-index: 10;
+}
+
+.redes {
+    display: flex;
+    text-align: center;
+    gap: 20px;
+}
+
+.redes img {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+/* Responsividade */
+
+@media (max-width: 500px) {
+	.fotos {
+		width: 90%;
+		height: 260px;
+	}
+
+	.icone {
+		width: 60px;
+		height: 60px;
+	}
+}
